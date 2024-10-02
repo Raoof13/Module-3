@@ -14,9 +14,9 @@ def string_info(string):
 def is_contains(string, list_to_search):
     count_calls()
     for i in list_to_search:
-        is_contains = string.lower() in [i.lower()]
+        string1 = string.lower() in [i.lower()]
 
-    return is_contains
+    return string1
 
 
 print(string_info('Capybara'))
