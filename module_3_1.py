@@ -2,36 +2,25 @@ from itertools import count
 
 calls = 0
 
+def count_calls():
+    global calls
+    calls+=1
 
-def count_calls(calls):
-    def string_info(string):
-        string = int(len(string)), str(string.upper()), str(string.lower())
+def string_info(string):
+    count_calls()
+    string = (len(string), string.upper(), string.lower())
+    return string
 
-        return string
+def is_contains(string, list_to_search):
+    count_calls()
+    for i in list_to_search:
+        is_contains = string.lower() in [i.lower()]
 
-    return count_calls
-    print(string_info('capibara'))
-
-    def is_contains(string, list_to_search):
-        list_to_search = []
-        for i in list(list_to_search):
-            if i == str(string):
-                is_contains = True
-            else:
-                is_contains = False
-
-            return is_contains
-        print(is_contains('urban', ['ban', 'banan', 'urban']))
-        return count_calls
-
-    calls = int(count(string_info())) + int(count(is_contains()))
+    return is_contains
 
 
-
-
-
-
-print(string_info())
-print(is_contains())
-print(is_contains())
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])) # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic'])) # No matches
 print(calls)
