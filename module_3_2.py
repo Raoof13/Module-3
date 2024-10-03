@@ -1,8 +1,7 @@
-def send_email(message, recipient):
-    sender = "university.help@gmail.com"
-    for i in message:
+def send_email(message, recipient, *, sender):
+    for i in recipient:
         if i != '@' or i != '.com':
-            print("Невозможно отправить письмо с адреса <sender> на адрес <recipient>")
+            print("Невозможно отправить письмо с адреса", sender, "на адрес", recipient)
 
 # Создайте функцию send_email, которая принимает 2 обычных аргумента: message(сообщение), recipient(получатель)
 # и 1 обязательно именованный аргумент со значением по умолчанию sender = "university.help@gmail.com".
@@ -16,7 +15,7 @@ def send_email(message, recipient):
 #   Здесь <sender> и <recipient> - значения хранящиеся в этих переменных.
 #   За один вызов функции выводится только одно и перечисленных
 # уведомлений! Проверки перечислены по мере выполнения.
-send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
+send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com', sender = "university.help@gmail.com")
 send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru',
 sender='urban.info@gmail.com')
 send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru',
