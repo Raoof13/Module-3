@@ -1,6 +1,6 @@
 def send_email(message, recipient, sender = "university.help@gmail.com"):
     for i in recipient:
-        if any(i not in recipient for i in ['@', '.com', '.ru', '.net']):
+        if any(i not in recipient for i in ['@']):
             print("Невозможно отправить письмо с адреса", sender, "на адрес", recipient)
             return
         elif recipient == sender:
