@@ -9,6 +9,6 @@ def get_multiplied_digits(number):
 
     return first * get_multiplied_digits(int(str_number[1:]))
 
-result_ = get_multiplied_digits(10205)
+result_ = get_multiplied_digits(123450)
 print(result_)
 
